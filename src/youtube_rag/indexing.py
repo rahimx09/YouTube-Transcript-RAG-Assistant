@@ -1,5 +1,7 @@
 """Split transcripts into chunks and keep their Chroma vectors up to date."""
 
+from __future__ import annotations
+
 import hashlib
 import logging
 import os
