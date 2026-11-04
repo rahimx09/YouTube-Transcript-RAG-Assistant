@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-transcript-rag"
+version = "0.1.0"
+description = "A retrieval-augmented question-answering assistant for YouTube transcripts."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain-chroma>=0.1.0",
+    "langchain-core>=0.2.0",
+    "langchain-google-genai>=1.0.0",
+    "langchain-text-splitters>=0.2.0",
+    "python-dotenv>=1.0.0",
+    "supadata>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+youtube-rag = "youtube_rag.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
